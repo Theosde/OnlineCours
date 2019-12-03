@@ -9,10 +9,9 @@ import { signOut } from "../store/actions/authActions";
 function Navbar(props) {
   const { auth } = props;
 
-  return (
-    <div>
-      {!auth.uid ? <Redirect push to="/" /> : null}
-      <div className="navbar">
+
+const NavbarDeco = () =>
+  (
         <ul>
           <li>
             <Link to="/Connexion">Connexion</Link>
@@ -20,6 +19,19 @@ function Navbar(props) {
           <li>
             <Link to="/Inscription">Inscription</Link>
           </li>
+          <li>
+            <Link to="/">Accueil</Link>
+          </li>
+          <li>
+            <Link to="/Liste-des-cours">Cours</Link>
+          </li>
+        </ul>
+  )
+
+
+const NavbarCo = () =>
+  (
+        <ul>
           <li>
             <Link to="/">Accueil</Link>
           </li>
@@ -36,6 +48,16 @@ function Navbar(props) {
             <button onClick={props.signOut}>Deconnexion</button>
           </li>
         </ul>
+  )
+
+
+  return (
+    <div>
+      {!auth.uid ? <Redirect push to="/" /> : null}
+      <div className="navbar">
+        {
+          auth.uid ? <NavbarCo/> : <NavbarDeco/>
+        }
       </div>
       <div className="border-gradient"></div>
     </div>
