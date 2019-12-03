@@ -38,7 +38,7 @@ export const updateGoal = (updatedGoal, id) => {
 };
 
 export const getAGoal = goalID => {
-  return (dispatch, getState, { getFirestore }) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
     firestore
       .collection("goalz")
