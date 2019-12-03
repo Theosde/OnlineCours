@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Home() {
+function ListeCours() {
     return (
         <div>
-            Home
+         ListeCours
         </div>
     )
 }
 
-export default Home
+export default ListeCours

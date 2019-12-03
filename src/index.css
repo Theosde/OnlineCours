@@ -3,19 +3,3 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-
-.secondary-content{
-	color: #2196f3 !important;
-}
-
-.material-icons{
-	margin: 0 10px !important;
-}
-
-.delete{
-	color: red;
-}
-
-.edit{
-	color: green;
-}
