@@ -1,18 +1,19 @@
-import firebase from 'firebase/app'
-import 'firebase/firestore'
-import 'firebase/auth'
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
 
 const config = {
-    apiKey: "AIzaSyDEgsz_z67W6IiPFMRbAflwm9bKqbjg4VA",
-    authDomain: "gaolzproject.firebaseapp.com",
-    databaseURL: "https://gaolzproject.firebaseio.com",
-    projectId: "gaolzproject",
-    storageBucket: "gaolzproject.appspot.com",
-    messagingSenderId: "471571022210",
-    appId: "1:471571022210:web:cc0f32370e7130f4518f9b"
-  };
+  apiKey: "AIzaSyAqLsMBICkdFU9q1AyOLdQ0QbVbE89-18s",
+  authDomain: "cours-en-ligne-e42da.firebaseapp.com",
+  databaseURL: "https://cours-en-ligne-e42da.firebaseio.com",
+  projectId: "cours-en-ligne-e42da",
+  storageBucket: "cours-en-ligne-e42da.appspot.com",
+  messagingSenderId: "1078088984845",
+  appId: "1:1078088984845:web:5c9ec8f5cb4b2291d5e844",
+  measurementId: "G-62TYVH2F42"
+};
 
 firebase.initializeApp(config);
 firebase.firestore().settings({ timestampsInSnapshots: true });
 
-export default firebase
+export default firebase;
