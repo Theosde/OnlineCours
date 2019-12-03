@@ -9,7 +9,7 @@ export const signIn = dataFormSignin => {
       .then(() => {
         dispatch({ type: "LOGIN_SUCCESS" });
       })
-      .catch(() => {
+      .catch(err => {
         dispatch({ type: "LOGIN_ERROR", err });
       });
   };

@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
 import { firestoreReducer } from "redux-firestore";
 import { firebaseReducer } from "react-redux-firebase";
-import getGoal from "./createGoal";
+import authReducer from "./authReducer";
 
 const rootReducer = combineReducers({
-  firestoreGoals: firestoreReducer,
-  firebase: firebaseReducer,
-  getGoal: getGoal
+  auth: authReducer,
+  firestore: firestoreReducer,
+  firebase: firebaseReducer
 });
 
 export default rootReducer;
