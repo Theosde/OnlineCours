@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Home() {
+function MonCompte() {
     return (
         <div>
-            Home
+            MonCompte
         </div>
     )
 }
 
-export default Home
+export default MonCompte
