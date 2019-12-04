@@ -1,0 +1,12 @@
+.background-bg{
+    background-image: url('../img/bg-form.jpg');
+    background-size: cover;
+    height: calc(100vh - 55px);
+}
+
+.center-form{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: calc(100vh - 55px);
+}

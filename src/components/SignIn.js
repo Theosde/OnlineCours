@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { signIn } from "../store/actions/authActions";
 
+import './SignIn.css';
+
+
 function SignIn(props) {
   const { authError, auth } = props;
 
@@ -20,35 +23,37 @@ function SignIn(props) {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className="signUpFormContainer">
-        <h1>LOGIN</h1>
-        <input
-          name="email"
-          type="text"
-          id="email"
-          placeholder="Email Address"
-          onChange={e => {
-            var copyFormData = { ...dataFormSignIn };
-            copyFormData.email = e.target.value;
-            setDataFormSignIn(copyFormData);
-          }}
-        />
-        <input
-          name="passwordOne"
-          type="password"
-          id="password"
-          placeholder="Password"
-          onChange={e => {
-            var copyFormData = { ...dataFormSignIn };
-            copyFormData.password = e.target.value;
-            setDataFormSignIn(copyFormData);
-          }}
-        />
+    <div className='background-bg'>
+      <div className='center-form'>
+       <form onSubmit={handleSubmit} className="signUpFormContainer">
+          <h1>CONNEXION</h1>
+          <input
+            name="email"
+            type="text"
+            id="email"
+            placeholder="Email Address"
+            onChange={e => {
+              var copyFormData = { ...dataFormSignIn };
+              copyFormData.email = e.target.value;
+              setDataFormSignIn(copyFormData);
+            }}
+          />
+          <input
+            name="passwordOne"
+            type="password"
+            id="password"
+            placeholder="Password"
+            onChange={e => {
+              var copyFormData = { ...dataFormSignIn };
+              copyFormData.password = e.target.value;
+              setDataFormSignIn(copyFormData);
+            }}
+          />
 
-        <button type="submit">Se connecter</button>
-        {authError ? <p>{authError}</p> : null}
-      </form>
+          <button type="submit">Se connecter</button>
+          {authError ? <p>{authError}</p> : null}
+        </form>
+      </div>
     </div>
   );
 }

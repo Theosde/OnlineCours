@@ -22,11 +22,12 @@
     color:black;
     font-weight:bold;
     color:white;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .navbar ul li a:hover{
     text-decoration: none;
-    color:#7912eb;
+    color:#00c853;
     font-weight:bold;
 }
 
@@ -35,7 +36,7 @@ hr{
 }
 .gradient{
     height: 7px;
-    background-image: linear-gradient(to top right, #6b5fb8,#7912eb);
+    background-image: linear-gradient(to top right, #69f0ae,#00c853);
 }
 .CategoriesNav{
     height: 75px;
@@ -44,7 +45,33 @@ hr{
 
 .border-gradient{
     height: 5px;
-    background-image: linear-gradient(to top right, #6b5fb8,#7912eb);
+    background-image: linear-gradient(to top right, #69f0ae,#00c853);
+}
+
+.deco-btn{
+    background-image: linear-gradient(to top right, #69f0ae,#00c853);
+    color:white;
+    padding: 7px 20px;
+    font-weight: bold;
+    border: none;
+    border: 1px solid #00c853;
+    border-radius:5px;
+    cursor: pointer;
+    margin-left:95px ;
+}
+
+.deco-btn:hover{
+    background-image: linear-gradient(to top right, #000,#555);
+}
+
+.nav-avatar{
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    background-image: url('../img/404pics.jpg');
+    background-size: cover;
+    margin-right:-95px;
+    border: 1px solid white;
 }
 
 @media screen and (max-width: 960px){

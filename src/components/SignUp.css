@@ -3,13 +3,16 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: auto;
+    width: 60%;
     margin-right: 38%;
     margin-left: 38%;
-    margin-top: 200px;
     padding: 55px 35px;
     border: 2px solid rgba(0,0,0,0.2);
     border-radius:10px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, .2);
+    background-color:white;
+    font-family: 'Orbitron', sans-serif;
   }
 
   .signUpFormContainer input{
@@ -19,7 +22,7 @@
       height: 25px;
       width:100%;
       border-style: none;
-      border-bottom:2px solid #6b5fb8;
+      border-bottom:2px solid #b9f6ca;
   }
 
   .signUpFormContainer button{
@@ -28,11 +31,24 @@
       padding: 10px;
       border-radius: 25px;
       width:100%;
-      background-image: linear-gradient(to top right, #6b5fb8,#7912eb);
+      background-image: linear-gradient(to top right, #00e676,#00c853);
       color: white;
       font-weight:bold;
       border-style: none;
       cursor: pointer;
+  }
+
+  .MuiFormControl-root-77{
+      width: 100%!important;
+      border: none;
+  }
+
+  .MuiInput-underline-103:before{
+      border: none!important;
+  }
+
+  .MuiInput-underline-103:after{
+      border: none!important;
   }
 
   @media screen and (max-width: 960px){

@@ -45,7 +45,10 @@ const NavbarCo = () =>
             <Link to="/Dashboard">Dashboard</Link>
           </li>
           <li>
-            <button onClick={props.signOut}>Deconnexion</button>
+            <button className="deco-btn" onClick={props.signOut}>Deconnexion</button>
+          </li>
+          <li>
+            <div className='nav-avatar'></div>
           </li>
         </ul>
   )
