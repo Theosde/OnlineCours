@@ -26,7 +26,7 @@
 }
 
 .error404-box h1{
-	color: #7912eb;
+	color: #ff6f00;
 	font-weight: bold;
 }
 
@@ -44,9 +44,9 @@
 .error404-btn{
 	width: 250px;
 	padding: 3px 35px;
-	background-color: #7912eb;
+	background-color: #ff6f00;
 	color: white;
-	border:2px solid #7912eb;
+	border:2px solid #ff6f00;
 	margin-top: 55px;
 	border-radius:25px;
 	cursor: pointer;
@@ -56,8 +56,8 @@
 }
 .error404-btn:hover{
 	background-color: white;
-	color: #7912eb;
-	border:2px solid #7912eb;
+	color: #ff6f00;
+	border:2px solid #ff6f00;
 }
 
 @media screen and (max-width:700px){

@@ -15,12 +15,12 @@ function SignUp(props) {
     confirmPassword: ""
   });
   const [errorForm, setErrorForm] = useState({
-    firstname: "",
-    lastname: "",
-    birthdate: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
+    firstname: null,
+    lastname: null,
+    birthdate: null,
+    email: null,
+    password: null,
+    confirmPassword: null,
     error: false
   });
 
@@ -90,60 +90,64 @@ function SignUp(props) {
   };
 
   return (
-    <div>
-      <form onSubmit={handleConfirme} className="signUpFormContainer">
-        <h1>REGISTER</h1>
-        <input
-          name="firstname"
-          type="text"
-          placeholder="firstname"
-          value={dataFormSignUp.firstname}
-          onChange={handleChange}
-        />
-        <input
-          name="lastname"
-          type="text"
-          placeholder="lastname"
-          value={dataFormSignUp.lastname}
-          onChange={handleChange}
-        />
-        <input
-          name="birthdate"
-          type="date"
-          value={dataFormSignUp.birthdate}
-          onChange={handleChange}
-        />
-        {errorForm.birthdate ? <p>{errorForm.birthdate}</p> : null}
-        <input
-          name="email"
-          type="text"
-          placeholder="Email Address"
-          value={dataFormSignUp.email}
-          onChange={handleChange}
-        />
-        {errorForm.email ? <p>{errorForm.email}</p> : null}
+    <div className="background-bg">
+      <div className="center-form">
+        <form onSubmit={handleConfirme} className="signUpFormContainer">
+          <h1>REGISTER</h1>
+          <input
+            name="firstname"
+            type="text"
+            placeholder="firstname"
+            value={dataFormSignUp.firstname}
+            onChange={handleChange}
+          />
+          <input
+            name="lastname"
+            type="text"
+            placeholder="lastname"
+            value={dataFormSignUp.lastname}
+            onChange={handleChange}
+          />
+          <input
+            name="birthdate"
+            type="date"
+            value={dataFormSignUp.birthdate}
+            onChange={handleChange}
+          />
+          {errorForm.birthdate ? <p>{errorForm.birthdate}</p> : null}
+          <input
+            name="email"
+            type="text"
+            placeholder="Email Address"
+            value={dataFormSignUp.email}
+            onChange={handleChange}
+          />
+          {errorForm.email ? <p>{errorForm.email}</p> : null}
 
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={dataFormSignUp.password}
-          onChange={handleChange}
-        />
-        {errorForm.password ? <p>{errorForm.password}</p> : null}
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            value={dataFormSignUp.password}
+            onChange={handleChange}
+          />
+          {errorForm.password ? <p>{errorForm.password}</p> : null}
 
-        <input
-          name="confirmPassword"
-          type="password"
-          placeholder="Confirm Password"
-          value={dataFormSignUp.confirmPassword}
-          onChange={handleChange}
-        />
-        {errorForm.confirmPassword ? <p>{errorForm.confirmPassword}</p> : null}
+          <input
+            name="confirmPassword"
+            type="password"
+            placeholder="Confirm Password"
+            value={dataFormSignUp.confirmPassword}
+            onChange={handleChange}
+          />
+          {errorForm.confirmPassword ? (
+            <p>{errorForm.confirmPassword}</p>
+          ) : null}
 
-        <button type="submit">S'inscrire</button>
-        {authError ? <p>{authError}</p> : null}
-      </form>
+          <button type="submit">S'inscrire</button>
+          {authError ? <p>{authError}</p> : null}
+        </form>
+      </div>
     </div>
   );
 }
