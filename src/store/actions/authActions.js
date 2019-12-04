@@ -31,13 +31,19 @@ export const signUp = newUser => {
             NOM: newUser.lastname,
             PRENOM: newUser.firstname,
             EMAIL: newUser.email,
-            BIRTHDATE: newUser.birthdate
+            BIRTHDATE: newUser.birthdate,
+            COURS: []
           });
       })
       .then(() => {
         dispatch({ type: "SIGNUP_SUCCESS" });
       })
-      .then(err => {
+      .catch(err => {
+        console.log(err);
+
+        if (err.code === "auth/email-already-in-use") {
+          err.message = "Cette email est déja associées à un compte";
+        }
         dispatch({ type: "SIGNUP_ERROR", err });
       });
   };
