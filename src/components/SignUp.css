@@ -22,7 +22,7 @@
       height: 25px;
       width:100%;
       border-style: none;
-      border-bottom:2px solid #b9f6ca;
+      border-bottom:2px solid #3f51b5;
   }
 
   .signUpFormContainer button{
@@ -31,7 +31,7 @@
       padding: 10px;
       border-radius: 25px;
       width:100%;
-      background-image: linear-gradient(to top right, #00e676,#00c853);
+      background-image: linear-gradient(to top right, #42a5f5,#3f51b5);
       color: white;
       font-weight:bold;
       border-style: none;
