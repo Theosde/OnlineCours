@@ -32,7 +32,8 @@ export const signUp = newUser => {
             PRENOM: newUser.firstname,
             EMAIL: newUser.email,
             BIRTHDATE: newUser.birthdate,
-            COURS: []
+            COURS: [],
+            ADMIN: false
           });
       })
       .then(() => {

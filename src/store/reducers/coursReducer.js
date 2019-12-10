@@ -1,8 +1,8 @@
 const initState = {
-  authError: null
+  cours: []
 };
 
-const authReducer = (state = initState, action) => {
+const coursReducer = (state = initState, action) => {
   switch (action.type) {
     case "GET_COURS":
       console.log("get all cours success");
@@ -11,18 +11,11 @@ const authReducer = (state = initState, action) => {
     case "SIGNUP_SUCCESS":
       console.log("signup success");
       return {
-        ...state,
-        authError: null
+        ...state
       };
 
-    case "SIGNUP_ERROR":
-      console.log("signup error");
-      return {
-        ...state,
-        authError: action.err.message
-      };
     default:
       return state;
   }
 };
-export default authReducer;
+export default coursReducer;
