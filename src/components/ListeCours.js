@@ -13,47 +13,11 @@ function ListeCours(props) {
   console.log("log cours props", cours);
 
   var mapListeCours = [];
-  useEffect(() => {
-    console.log("in useeffect", props);
 
-    if (cours != undefined) {
-      mapListeCours = cours.map((cour, id) => {
-        console.log("dans map", cour);
-        return (
-          <div className="coursCard">
-            <div className="coursCard-left">
-              <img
-                className="imgCardSize"
-                src="https://i.imgsafe.org/d2/d261c70001.jpeg"
-              ></img>
-            </div>
-            <div className="coursCard-center">
-              <h2>Le HTML pour commencer vos pages Web</h2>
-              <p>
-                Rien de mieux que de commencer par comprendre comment est
-                structurer une page Web , ici je parle bien d'architecture !
-              </p>
-            </div>
-            <div className="coursCard-right">
-              <Link to="/Cours">
-                <button className="buy-btn">Lien vers cours</button>
-              </Link>
-            </div>
-          </div>
-        );
-      });
-    }
-  }, [cours]);
-
-  console.log(mapListeCours);
-
-  return (
-    <div className="background-bg">
-      <div className="center-form column">
-        <FilterBar />
-
-        {mapListeCours}
-
+  if (cours != undefined) {
+    mapListeCours = cours.map((cour, id) => {
+      console.log("dans map", cour);
+      return (
         <div className="coursCard">
           <div className="coursCard-left">
             <img
@@ -74,6 +38,18 @@ function ListeCours(props) {
             </Link>
           </div>
         </div>
+      );
+    });
+  }
+
+  console.log(mapListeCours);
+
+  return (
+    <div className="background-bg">
+      <div className="center-form column">
+        <FilterBar />
+
+        {mapListeCours}
       </div>
     </div>
   );
