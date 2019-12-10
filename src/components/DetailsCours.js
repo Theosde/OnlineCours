@@ -37,13 +37,15 @@ function DetailsCours(props) {
                     <h2>Le CSS c'est magique !</h2>
                     <h2>Les attribus courrants et utiles en CSS</h2>
                     <h2>Les Flexbox pour mettre en page notre première page web</h2>
+                </div>
+                <div className='stripe-div'>
                     <StripeProvider apiKey="pk_test_pmFkiabm7wViJLCJaZYH9GWw00rPuvibi8">
-                      <div className="example">
-                        <h2>Payer avec Stripe</h2>
-                        <Elements>
-                            <CheckoutForm emailUser={auth.email}/>
-                        </Elements>
-                      </div>
+                        <div className="example">
+                            <h2>Payer avec Stripe</h2>
+                            <Elements>
+                                <CheckoutForm emailUser={auth.email}/>
+                            </Elements>
+                        </div>
                     </StripeProvider>
                 </div>
             </div>
