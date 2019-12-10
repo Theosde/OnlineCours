@@ -133,3 +133,19 @@
     color:white!important;
     font-style: italic;
 }
+
+.stripe-div{
+    height: auto;
+    border-radius:10px;
+	box-shadow: 8px 8px 0 0 rgba(0,0,0,0.2);
+    border: 1px solid black;
+    border: 1px solid rgba(0,0,0,0.2);
+	background-color: white;
+    padding: 25px;
+    margin-right: 55px;
+    width:350px;
+}
+
+.example h2{
+    text-align: center;
+}

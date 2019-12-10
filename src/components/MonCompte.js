@@ -2,7 +2,7 @@ import React from 'react'
 
 function MonCompte() {
     return (
-        <div>
+        <div className="background-bg">
             MonCompte
         </div>
     )

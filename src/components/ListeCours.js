@@ -24,12 +24,15 @@ function ListeCours(props) {
             <div className="coursCard-left">
               <img
                 className="imgCardSize"
-                src="https://s3-eu-west-1.amazonaws.com/sdz-upload/prod/upload/sublimetext_html_base.png"
+                src="https://i.imgsafe.org/d2/d261c70001.jpeg"
               ></img>
             </div>
             <div className="coursCard-center">
-              <h2>Les bases du developpement Web</h2>
-              <p>Apprenez les bases du developpement Web grace au HTML</p>
+              <h2>Le HTML pour commencer vos pages Web</h2>
+              <p>
+                Rien de mieux que de commencer par comprendre comment est
+                structurer une page Web , ici je parle bien d'architecture !
+              </p>
             </div>
             <div className="coursCard-right">
               <Link to="/Cours">
@@ -50,6 +53,27 @@ function ListeCours(props) {
         <FilterBar />
 
         {mapListeCours}
+
+        <div className="coursCard">
+          <div className="coursCard-left">
+            <img
+              className="imgCardSize"
+              src="https://i.imgsafe.org/d2/d261c70001.jpeg"
+            ></img>
+          </div>
+          <div className="coursCard-center">
+            <h2>Le HTML pour commencer vos pages Web</h2>
+            <p>
+              Rien de mieux que de commencer par comprendre comment est
+              structurer une page Web , ici je parle bien d'architecture !
+            </p>
+          </div>
+          <div className="coursCard-right">
+            <Link to="/Cours">
+              <button className="buy-btn">Lien vers cours</button>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

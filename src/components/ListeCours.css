@@ -26,7 +26,7 @@
     width: 22%;
     display:flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .column{
@@ -36,4 +36,5 @@
 .imgCardSize{
     height: 185px;
     width: 235px;
+    border: 2px solid rgba(0,0,0,0.2);
 }
