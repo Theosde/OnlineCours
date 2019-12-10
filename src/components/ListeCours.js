@@ -50,6 +50,7 @@ function ListeCours(props) {
         <FilterBar />
 
         {mapListeCours}
+        
       </div>
     </div>
   );
