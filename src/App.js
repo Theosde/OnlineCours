@@ -10,8 +10,7 @@ import SignUp from "./components/SignUp";
 import ListeCours from "./components/ListeCours";
 import MonCompte from "./components/MonCompte";
 import Dashboard from "./components/DashBoard";
-import DetailsCours from './components/DetailsCours';
-
+import DetailsCours from "./components/DetailsCours";
 
 class App extends Component {
   render() {
@@ -21,14 +20,17 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/Inscription" component={SignUp}/>
+            <Route path="/Inscription" component={SignUp} />
             <Route path="/Connexion" component={SignIn} />
             <Route path="/Liste-des-cours" component={ListeCours} />
-            <Route path="/Cours" component={DetailsCours} />
+            <Route
+              path="/Cours/:idCours/:nomChapitre"
+              component={DetailsCours}
+            />
             <Route path="/MonCompte" component={MonCompte} />
             <Route path="/Dashboard" component={Dashboard} />
             <Route path="/Error404" component={Error404} />
-            <Redirect to='/Error404' />
+            <Redirect to="/Error404" />
           </Switch>
         </div>
       </BrowserRouter>

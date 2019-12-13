@@ -1,63 +1,129 @@
-import React from 'react'
-import {Elements, StripeProvider} from 'react-stripe-elements';
-import CheckoutForm from './CheckoutForm';
+import React, { useState, useEffect } from "react";
+import { Elements, StripeProvider } from "react-stripe-elements";
+import CheckoutForm from "./CheckoutForm";
 import { connect } from "react-redux";
+import { compose } from "redux";
+import { firestoreConnect } from "react-redux-firebase";
+import { Link } from "react-router-dom";
 
-import './DetailsCours.css'
+import "./DetailsCours.css";
 
 function DetailsCours(props) {
+  const { auth, detailsCours, infoUserConnect } = props;
 
-    const { auth }  = props;
+  const [listeSommaire, setListeSommaire] = useState([]);
+  const [infoCours, setInfoCours] = useState({});
+  const [stateInfoAfficher, setStateInfoAfficher] = useState([]);
 
-    return (
-        <div className="page-detail-container">
-            <div className="colonne-gauche-detail"></div>
-            <div className="colonne-centrale-detail">
-                <h1>Débuter en developpement Web</h1>
-                <img className="banner-width" src="../../cours1.png"></img>
-                <p>Bonjour et bienvenue à toutes et à tous !</p>
-                <p>Voici donc le premier chapitre de ce cours pour débutants, qui va vous apprendre à créer votre site web !</p>
-                <p>Nous allons passer un certain temps ensemble, tout dépendra de la vitesse à laquelle vous apprendrez. Si vous lisez ce cours régulièrement et à une bonne vitesse, vous l'aurez terminé en une à deux semaines. Mais si vous avez besoin d'un peu plus de temps, ne vous inquiétez pas : le principal est que vous y alliez à votre rythme, de préférence en prenant du bon temps.</p>
-                <p>e vous propose de commencer par la question la plus simple mais aussi la plus importante : comment fonctionnent les sites web ?</p>
-                <p>Non, n'ayez pas peur de poser des questions même si vous pensez qu'elles sont « bêtes ». Il est très important que nous en parlions un peu avant de nous lancer à fond dans la création de sites !</p>
-                <h2>Le fonctionnement des sites Web</h2>
-                <p>Je suis certain que vous consultez des sites web tous les jours. Pour cela, vous lancez un programme appelé le navigateur web en cliquant sur l'une des icônes représentées à la figure suivante.</p>
-                <p>Avec le navigateur, vous pouvez consulter n'importe quel site web. Voici par exemple un navigateur affichant le célèbre site web Wikipédia :</p>
-            </div>
-            <div>
-                <div className="colonne-droite-detail">
-                    <h2>Débuter en developpement Web</h2>
-                    <h2>Les outils à télécharger pour coder</h2>
-                    <h2>Commençons à coder !</h2>
-                    <h2>Structurer le code</h2>
-                    <h2>Le changement de page / les liens</h2>
-                    <h2>inserer des Images ou des vidéo</h2>
-                    <h2>Les formulaires</h2>
-                    <h2>Et le style dans tous ca?</h2>
-                    <h2>Le CSS c'est magique !</h2>
-                    <h2>Les attribus courrants et utiles en CSS</h2>
-                    <h2>Les Flexbox pour mettre en page notre première page web</h2>
-                </div>
-                <div className='stripe-div'>
-                    <StripeProvider apiKey="pk_test_pmFkiabm7wViJLCJaZYH9GWw00rPuvibi8">
-                        <div className="example">
-                            <h2>Payer avec Stripe</h2>
-                            <Elements>
-                                <CheckoutForm emailUser={auth.email}/>
-                            </Elements>
-                        </div>
-                    </StripeProvider>
-                </div>
-            </div>
+  useEffect(() => {
+    if (detailsCours) {
+      // cours acheter ou non
+      if (infoUserConnect) {
+        if (infoUserConnect.COURS.includes(props.match.params.idCours)) {
+          console.log("cours acheter");
+          setInfoCours(detailsCours);
+          setListeSommaire(Object.keys(detailsCours.CONTENU));
+          setStateInfoAfficher(
+            detailsCours.CONTENU[props.match.params.nomChapitre]
+          );
+        } else {
+          console.log("cours pas acheter");
+        }
+      }
+
+      ////////////verif si le cours est acheter else suppr sommaire et changer contenuAfficher
+    }
+  }, [infoUserConnect]);
+
+  useEffect(() => {
+    //if cours est acheter
+    if (detailsCours) {
+      setStateInfoAfficher(
+        detailsCours.CONTENU[props.match.params.nomChapitre]
+      );
+    }
+  }, [props.match.params.nomChapitre]);
+
+  if (detailsCours) {
+    console.log("infoUserConnect", infoUserConnect);
+    console.log("infoCours", infoCours);
+    console.log("stateInfoAfficher", stateInfoAfficher);
+    console.log("listeSommaire", listeSommaire);
+
+    console.log(
+      "----------------------------------------------------------------------------------------"
+    );
+
+    var listChapitre = listeSommaire.map(chapitre => {
+      return (
+        <Link to={`/Cours/${props.match.params.idCours}/${chapitre}`}>
+          <h2>{chapitre}</h2>
+        </Link>
+      );
+    });
+    var contenuAfficher = stateInfoAfficher.map(info => {
+      if (info.TYPE === "titre") {
+        return <h1>{info.CONTENU_AFFICHER}</h1>;
+      } else if (info.TYPE === "text") {
+        return <p>{info.CONTENU_AFFICHER}</p>;
+      }
+    });
+  }
+
+  //////////////////////////////////////////////////////////////
+  return (
+    <div>
+      <div className="titre_cours">{infoCours.TITRE}</div>
+      <div className="page-detail-container">
+        <div className="colonne-gauche-detail"></div>
+        <div className="colonne-centrale-detail">{contenuAfficher}</div>
+        <div>
+          <div className="colonne-droite-detail">{listChapitre}</div>
+          <div className="stripe-div">
+            <StripeProvider apiKey="pk_test_pmFkiabm7wViJLCJaZYH9GWw00rPuvibi8">
+              <div className="example">
+                <h2>Payer avec Stripe</h2>
+                <Elements>
+                  <CheckoutForm emailUser={auth.email} />
+                </Elements>
+              </div>
+            </StripeProvider>
+          </div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
+const mapStateToProps = (state, ownProps) => {
+  console.log(state);
+  const id = ownProps.match.params.idCours;
+  const cours = state.firestore.data.COURS;
+  const detailsCours = cours ? cours[id] : null;
 
-const mapStateToProps = state => {
-    return {
-      auth: state.firebase.auth
-    };
+  const allusers = state.firestore.data.userdata;
+  const userIdConnect = state.firebase.auth.uid;
+
+  console.log(allusers);
+  console.log(userIdConnect);
+
+  const infoUserConnect = allusers ? allusers[userIdConnect] : null;
+  return {
+    auth: state.firebase.auth,
+    detailsCours: detailsCours,
+    infoUserConnect: infoUserConnect
   };
+};
 
-  export default connect(mapStateToProps, null)(DetailsCours);
+export default compose(
+  connect(mapStateToProps, null),
+  firestoreConnect(theProps => {
+    return [
+      {
+        collection: `COURS`,
+        collection: `USERS`,
+        storeAs: "userdata"
+      }
+    ];
+  })
+)(DetailsCours);

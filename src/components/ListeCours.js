@@ -15,8 +15,13 @@ function ListeCours(props) {
   var mapListeCours = [];
 
   if (cours != undefined) {
+    //filter
+
     mapListeCours = cours.map((cour, id) => {
-      console.log("dans map", cour);
+      console.log(
+        "dans map",
+        cour.CONTENU[Object.keys(cour.CONTENU)[0]][1].CONTENU_AFFICHER
+      );
       return (
         <div className="coursCard">
           <div className="coursCard-left">
@@ -26,14 +31,15 @@ function ListeCours(props) {
             ></img>
           </div>
           <div className="coursCard-center">
-            <h2>Le HTML pour commencer vos pages Web</h2>
+            <h2>{cour.TITRE}</h2>
             <p>
-              Rien de mieux que de commencer par comprendre comment est
-              structurer une page Web , ici je parle bien d'architecture !
+              {cour.CONTENU[
+                Object.keys(cour.CONTENU)[0]
+              ][1].CONTENU_AFFICHER.slice(0, 150) + "..."}
             </p>
           </div>
           <div className="coursCard-right">
-            <Link to="/Cours">
+            <Link to={`/Cours/${cour.id}/${Object.keys(cour.CONTENU)[0]}`}>
               <button className="buy-btn">Lien vers cours</button>
             </Link>
           </div>
@@ -50,7 +56,6 @@ function ListeCours(props) {
         <FilterBar />
 
         {mapListeCours}
-        
       </div>
     </div>
   );
