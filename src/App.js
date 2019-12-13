@@ -27,7 +27,7 @@ class App extends Component {
             <Route path="/Cours" component={DetailsCours} />
             <Route path="/MonCompte" component={MonCompte} />
             <Route path="/Dashboard" component={Dashboard} />
-            <Route path="/Error404" component={Error404} />
+            <Route component={Error404} />
             <Redirect to='/Error404' />
           </Switch>
         </div>

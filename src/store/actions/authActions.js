@@ -33,7 +33,8 @@ export const signUp = newUser => {
             EMAIL: newUser.email,
             BIRTHDATE: newUser.birthdate,
             COURS: [],
-            ADMIN: false
+            ADMIN: false,
+            AVATAR: ''
           });
       })
       .then(() => {
@@ -49,6 +50,54 @@ export const signUp = newUser => {
       });
   };
 };
+//RESET EMAIL
+
+
+export const resetEmail = newEmail => {
+  return(dispatch,getState, { getFirebase }) => {
+    const firebase = getFirebase();
+    console.log(newEmail)
+    var user = firebase.auth().currentUser;
+
+    console.log(user)
+    user.updateEmail(newEmail)
+    .then(() =>
+    dispatch({
+      type: "RESET_MAIL_SUCCESS",
+      payload: "Un lien vous à été envoyer par Email pour modifier votre adresse Email"
+    })
+  )
+  .catch(err => {
+    dispatch({
+      type: "RESET_MAIL_ERROR",
+      payload: "Fail send Email to reset your Email"
+    });
+  });
+}}
+
+
+//PASSWORD RESET
+
+export const resetPassword = email => {
+  return(dispatch, getState, { getFirebase }) => {
+    const firebase = getFirebase();
+    console.log(firebase)
+    firebase
+    .auth()
+    .sendPasswordResetEmail(email)
+    .then(() =>
+      dispatch({
+        type: "RESET_SUCCESS",
+        payload: "Un lien vous à été envoyer par Email pour modifier votre mot de passe"
+      })
+    )
+    .catch(err => {
+      dispatch({
+        type: "RESET_ERROR",
+        payload: "Fail send Email to reset password"
+      });
+    });
+  }}
 
 export const signOut = () => {
   return (dispatch, getState, { getFirebase }) => {
@@ -61,3 +110,4 @@ export const signOut = () => {
       });
   };
 };
+

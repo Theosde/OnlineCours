@@ -8,7 +8,7 @@ function DashBoard() {
             <div className="center-form column">
             <div style={{width:'100%'}}>
 
-            <table class="blueTable">
+            <table className="blueTable">
               <thead>
                 <tr>
                     <th>Cours</th>
