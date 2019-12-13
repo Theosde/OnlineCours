@@ -31,13 +31,26 @@ function MonCompte(props) {
         if(e.target.files[0]){
             image.image = e.target.files[0]
             console.log(e.target.files[0])
-                setNewImage( image )
+            setNewImage( image )
       }
     }
 
     var handleUpload = () => {
         const {image} = newImage;
-        const uploadTask = storage.ref(`images/${image.name}`).put(image)
+        var uploadTask;
+        var fileType;
+        console.log(newImage.image.type)
+        if(newImage.image.type === "image/png"){
+            fileType = '.png'
+        }else if(newImage.image.type === "image/jpeg"){
+            fileType = '.jpg'
+        }else if(newImage.image.type === "image/gif"){
+            fileType = '.gif'
+        }
+
+        console.log(new Date())
+        var TimeStamp = new Date().getTime()
+        uploadTask = storage.ref(`images/${auth.uid}/${TimeStamp}${fileType}`).put(image)
         uploadTask.on('state_changed',
             (snapshot) =>{
                 //progress function
@@ -55,7 +68,7 @@ function MonCompte(props) {
                 // progressOfUploaded.progress = progress;
                 // setNewImage(progressOfUploaded);
 
-                storage.ref('images').child(image.name).getDownloadURL().then(url =>{
+                storage.ref('images/' + auth.uid).child(TimeStamp + fileType).getDownloadURL().then(url =>{
                     const urlOfUploaded = {...newImage};
                     urlOfUploaded.url = url;
                     setNewImage(urlOfUploaded);
@@ -99,7 +112,7 @@ const onglet2 = <div className="onglet2">
 </div>
 <div className='img-preview-container-border'>
     <div className='img-preview-container'>
-        <img src={newImage.url? newImage.url: 'https://firebasestorage.googleapis.com/v0/b/cours-en-ligne-e42da.appspot.com/o/images%2Fplaceholder.jpg?alt=media&token=94e944df-2d21-41d7-baf0-eb69bce2f2f1' } width="200px" height="200px"></img>
+        <img alt='EmptyimgUpload' src={newImage.url? newImage.url: 'https://image.noelshack.com/fichiers/2019/50/5/1576249674-upload-image-512.jpg' } width="200px" height="200px"></img>
     </div>
 </div>
 <div>
