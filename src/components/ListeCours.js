@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import FilterBar from "./FilterBar";
 import "./ListeCours.css";
@@ -14,7 +14,7 @@ function ListeCours(props) {
 
   var mapListeCours = [];
 
-  if (cours != undefined) {
+  if (cours !== undefined) {
     //filter
 
     mapListeCours = cours.map((cour, id) => {
@@ -28,6 +28,7 @@ function ListeCours(props) {
             <img
               className="imgCardSize"
               src="https://i.imgsafe.org/d2/d261c70001.jpeg"
+              alt='imageCoursBanner'
             ></img>
           </div>
           <div className="coursCard-center">

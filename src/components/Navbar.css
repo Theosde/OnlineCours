@@ -1,6 +1,7 @@
 .navbar {
   display: flex;
   width: 100%;
+  height: 97px;
   background-image: linear-gradient(to top right, #000, #555);
 }
 
@@ -73,11 +74,21 @@ hr {
   );
 }
 
-.nav-avatar {
+.nav-avatar-default {
   border-radius: 50%;
   width: 55px;
   height: 55px;
   background-image: url("../img/404pics.jpg");
+  background-size: cover;
+  margin-right: -95px;
+  border: 1px solid white;
+}
+
+.nav-avatar-user-img {
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  background-image: #fff;
   background-size: cover;
   margin-right: -95px;
   border: 1px solid white;
