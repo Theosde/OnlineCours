@@ -14,6 +14,7 @@ function DetailsCours(props) {
   const [listeSommaire, setListeSommaire] = useState([]);
   const [infoCours, setInfoCours] = useState({});
   const [stateInfoAfficher, setStateInfoAfficher] = useState([]);
+  const [authorisationCours, setauthorisationCours] = useState(true);
 
   useEffect(() => {
     if (detailsCours) {
@@ -27,6 +28,13 @@ function DetailsCours(props) {
             detailsCours.CONTENU[props.match.params.nomChapitre]
           );
         } else {
+          setInfoCours(detailsCours);
+          setListeSommaire(Object.keys(detailsCours.CONTENU));
+          setStateInfoAfficher(
+            detailsCours.CONTENU[props.match.params.nomChapitre]
+          );
+          setauthorisationCours(false);
+
           console.log("cours pas acheter");
         }
       }
@@ -54,12 +62,16 @@ function DetailsCours(props) {
       "----------------------------------------------------------------------------------------"
     );
 
-    var listChapitre = listeSommaire.map(chapitre => {
-      return (
-        <Link to={`/Cours/${props.match.params.idCours}/${chapitre}`}>
-          <h2>{chapitre}</h2>
-        </Link>
-      );
+    var listChapitre = listeSommaire.map((chapitre, key) => {
+      if (authorisationCours) {
+        return (
+          <Link to={`/Cours/${props.match.params.idCours}/${chapitre}`}>
+            <h2>{chapitre}</h2>
+          </Link>
+        );
+      } else {
+        return <h2>{chapitre}</h2>;
+      }
     });
     var contenuAfficher = stateInfoAfficher.map(info => {
       if (info.TYPE === "titre") {
