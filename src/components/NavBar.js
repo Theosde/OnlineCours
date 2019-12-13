@@ -48,7 +48,7 @@ const NavbarCo = () =>
             <button className="deco-btn" onClick={props.signOut}>DECONNEXION</button>
           </li>
           <li>
-            <div className='nav-avatar'></div>
+            <div className='nav-avatar'><img src=''></img></div>
           </li>
         </ul>
   )

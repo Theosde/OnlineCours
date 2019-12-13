@@ -1,0 +1,200 @@
+/*ONGLETS*/
+
+.personnal-infos-container{
+    background-color: white;
+    width: 100%;
+    margin-right: 20%;
+    margin-left: 20%;
+    padding: 55px 85px;
+    border: 2px solid rgba(0,0,0,0.2);
+    border-radius:0 10px 10px 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, .2);
+}
+
+.onglet-container{
+    display:flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    margin-left: -174px;
+}
+
+.onglet-1{
+    background-color: white;
+    padding: 10px 15px;
+    border: 2px solid rgba(0,0,0,0.2);
+    border-bottom:none;
+    border-right: none;
+    border-radius:10px 0 0 0;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+}
+
+.onglet-2{
+    background-color: white;
+    padding: 10px 15px;
+    border: 2px solid rgba(0,0,0,0.2);
+    border-bottom:none;
+    border-right: none;
+    border-radius:0 0 0 0;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+}
+
+.onglet-3{
+    background-color: white;
+    padding: 10px 15px;
+    border: 2px solid rgba(0,0,0,0.2);
+    border-bottom:none;
+    border-radius:0 10px 0 0;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    min-width: 120px;
+}
+/*CONTENU ONGLET 1*/
+.onglet1{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.onglet1 input{
+    height: 25px;
+    padding-left:5px;
+    width: 60%;
+    margin:20px 20%;
+}
+
+.onglet-1:hover, .onglet-2:hover, .onglet-3:hover{
+    background: -moz-linear-gradient(to top right, #42a5f5,#3f51b5);
+    background: -webkit-linear-gradient(to top right, #42a5f5,#3f51b5);
+    background: linear-gradient(to top right, #42a5f5,#3f51b5);
+    color: white;
+    border: 1px solid  rgba(0,0,0,0.2);;
+}
+
+.onglet1 label{
+    margin-left: 200px;
+    margin-top:20px;
+}
+
+/*CONTENU ONGLET 3*/
+
+.personnal-infos-container h1{
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.personnal-infos-container p{
+    text-align: center;
+    margin-top: -15px;
+    font-size: 13px;
+    padding-bottom:25px;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+}
+
+.center-form-myAccount{
+    height: 100vh;
+    width: 60%;
+    padding: 0 20%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 55px;
+    display:flex!important;
+    flex-direction: column!important;
+    justify-content: flex-start!important;
+}
+/*EMAIL*/
+.emailChange-input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:25px;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    flex-direction: column;
+}
+
+.emailChange-input-container input{
+    height: 25px;
+    padding-left:5px;
+    width: 60%;
+}
+
+/*PASSWORD RESET*/
+
+.passwordChange-input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:25px;
+    border-bottom: 2px dotted rgba(0,0,0,0.2);
+    flex-direction: column;
+}
+
+.ChangePassword-btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 35px;
+}
+.ChangePassword-btn{
+    text-align: center;
+    background-image: linear-gradient(to top right, #42a5f5,#3f51b5);
+    color:white;
+    padding: 7px 20px;
+    font-weight: bold;
+    border: none;
+    border: 1px solid #3f51b5;
+    border-radius:5px;
+    cursor: pointer;
+    margin-left:95px ;
+    font-family: 'Orbitron', sans-serif;
+    width: 300px;
+    margin:20px 0;
+}
+
+.ErrorMessage{
+    font-weight: bold;
+    margin-top:15px;
+}
+
+/*CONTENU ONGLET 2*/
+
+.img-preview-container-border{
+    margin-bottom:20px;
+    width: 220px;
+    margin: 0 5%;
+    height: 220px;
+    background-color: white;
+    border: 2px solid rgba(0,0,0,0.2);
+}
+
+.onglet2{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-btn-container{
+    display:flex;
+    justify-content: center;
+}
+
+.img-preview-container{
+    background-color: #EFEFEF;
+    margin: 10px;
+    height: 90%;
+}
+
+.label-img-display,.label-modif-img{
+    margin: 20px 45px;
+}
+
+input[type="file" i]{
+    width: 120px;
+    color:white;
+    font-family: 'Orbitron', sans-serif;
+}
