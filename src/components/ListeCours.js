@@ -27,7 +27,7 @@ function ListeCours(props) {
           <div className="coursCard-left">
             <img
               className="imgCardSize"
-              src="https://i.imgsafe.org/d2/d261c70001.jpeg"
+              src="https://image.noelshack.com/fichiers/2019/50/6/1576346446-bg-html.jpg"
               alt='imageCoursBanner'
             ></img>
           </div>

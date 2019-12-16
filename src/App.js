@@ -9,7 +9,8 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import ListeCours from "./components/ListeCours";
 import MonCompte from "./components/MonCompte";
-import Dashboard from "./components/DashBoard";
+import DashBoard from "./components/DashBoard";
+import DashBoardAdmin from "./components/DashboardAdmin";
 import DetailsCours from "./components/DetailsCours";
 
 class App extends Component {
@@ -28,7 +29,7 @@ class App extends Component {
               component={DetailsCours}
             />
             <Route path="/MonCompte" component={MonCompte} />
-            <Route path="/Dashboard" component={Dashboard} />
+            <Route path="/Dashboard" component={DashBoardAdmin} />
             <Route path="/Error404" component={Error404} />
             <Redirect to="/Error404" />
           </Switch>
