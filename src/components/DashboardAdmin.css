@@ -1,0 +1,172 @@
+.checkboxContainer{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+    padding-top:5px;
+}
+
+.checkboxSuperContainer{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+    padding-top:55px;
+}
+
+.flexCheckBox{
+    display:flex;
+    align-items: center;
+}
+
+.flexCheckBox label{
+    margin:0px;
+    margin-right: 20px!important;
+}
+
+input[type="checkbox" i]{
+    margin:0px!important;
+    width: 25px!important;
+    margin-right: 5px!important;
+}
+
+.PriceContainer{
+    border-top: 2px solid rgba(0,0,0,0.2);
+    margin-top:25px;
+    padding:25px 0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flexCenterColumn{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom:25px ;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+}
+
+.flexCenterColumn label, .PriceContainer label{
+    font-weight: bold;
+    margin-left: 0px!important;
+}
+
+/*onglet-2 page admindashboard*/
+.add-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    width: 100%;
+    border-top: 2px solid rgba(0,0,0,0.2);
+}
+.add-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top right, #fff,#fff);
+    border: 2px solid #52D508;
+    color:#52D508;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+    padding-top:12px;
+    padding-right: 12px;
+    margin-bottom:25px;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+}
+
+.add-btn:hover{
+    background-image: linear-gradient(to top right, #45AF5D,#52D508);
+    border: 2px solid #52D508;
+    font-size: 25px;
+    color:#fff;
+}
+.modify-btn{
+    background-image: linear-gradient(to top right, #fff,#fff);
+    border: 2px solid #52D508;
+    color: #52D508;
+    padding: 7px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Orbitron", sans-serif;
+}
+
+.modify-btn:hover{
+    background-image: linear-gradient(to top right, #45AF5D,#52D508);
+    border: 2px solid #52D508;
+    color:#fff;
+}
+
+.suppress-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top right, #fff,#fff);
+    border: 2px solid #E12911;
+    color:#E12911;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+    padding-top:10px;
+    padding-right: 10px;
+    padding-bottom:12px;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.suppress-btn:hover{
+    background-image: linear-gradient(to top right, #ED2939,#E12911);
+    border: 2px solid #E12911;
+    color:white;
+}
+
+
+.add-container p{
+    border: none;
+}
+
+.mapDesChapitres-Container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 55px 0;
+    width: 100%;
+    border-top: 2px solid rgba(0,0,0,0.2);
+}
+
+.UnSeulChapitreContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    margin-top: 2px;
+}
+
+.mapDesChapitresRenderCol1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.img-hover-2:hover{
+    background-image: url('../img/arrow2.png');
+}
+
+.mapDesChapitresRenderCol3{
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
