@@ -26,7 +26,8 @@
     width: 22%;
     display:flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    margin-left: 10px;
 }
 
 .column{

@@ -94,9 +94,9 @@
 }
 
 .center-form-myAccount{
-    height: 100vh;
+    height: auto;
     width: 60%;
-    padding: 0 20%;
+    padding: 2% 20%;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -197,4 +197,13 @@ input[type="file" i]{
     width: 120px;
     color:white;
     font-family: 'Orbitron', sans-serif;
+}
+
+@media screen and (max-width: 960px) {
+    .onglet1 label{
+        margin-left: 125px;
+    }
+    .emailChange-input-container input{
+        width: 300px;
+    }
 }
