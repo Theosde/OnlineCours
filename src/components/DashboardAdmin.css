@@ -22,6 +22,14 @@
     margin-right: 20px!important;
 }
 
+.label-checkbox{
+    margin:0px!important;
+    font-weight: bold;
+    display:flex;
+    justify-content: center;
+    padding-bottom:25px;
+}
+
 input[type="checkbox" i]{
     margin:0px!important;
     width: 25px!important;
@@ -131,6 +139,10 @@ input[type="checkbox" i]{
 .add-container p{
     border: none;
 }
+.titre-container-page{
+    width: 100%;
+    text-align: center;
+}
 
 .mapDesChapitres-Container{
     display: flex;
@@ -138,7 +150,6 @@ input[type="checkbox" i]{
     align-items: center;
     padding: 55px 0;
     width: 100%;
-    border-top: 2px solid rgba(0,0,0,0.2);
 }
 
 .UnSeulChapitreContainer{
@@ -158,9 +169,17 @@ input[type="checkbox" i]{
     align-items: flex-start;
     cursor: pointer;
 }
+.img-hover-2,.img-hover-1{
+    filter: grayscale(1);
+}
 
-.img-hover-2:hover{
-    background-image: url('../img/arrow2.png');
+.img-hover-2:hover, .img-hover-1:hover{
+    filter: grayscale(0);
+}
+
+.mapDesChapitresRenderCol2{
+    text-align: justify;
+    padding: 15px 20px;
 }
 
 .mapDesChapitresRenderCol3{
@@ -169,4 +188,81 @@ input[type="checkbox" i]{
     align-items: center;
     padding: 10px;
     cursor: pointer;
+}
+
+.text-input-adding-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    margin-top: 2px;
+    height: 200px;
+}
+
+.text-input-adding-container textarea{
+    margin-left:55px;
+    width: 75%;
+    height: 150px;
+}
+
+.add-btn2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top right, #fff,#fff);
+    border: 2px solid #52D508;
+    color:#52D508;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+    padding-top:12px;
+    padding-right: 10px;
+    border-radius: 50%;
+    margin-right:15px;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+}
+
+.add-btn2:hover{
+    background-image: linear-gradient(to top right, #45AF5D,#52D508);
+    border: 2px solid #52D508;
+    font-size: 25px;
+    color:#fff;
+}
+
+.validate-btn-onglet-3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top right, #fff,#fff);
+    border: 2px solid #52D508;
+    color:#52D508;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    padding-top:12px;
+    padding-bottom:12px;
+    padding-right: 10px;
+    border-radius: 5px;
+    margin-right:15px;
+    margin-top:35px;
+    width: 350px;
+    height: 10px;
+    cursor: pointer;
+    font-family: "Orbitron", sans-serif;
+}
+.validate-btn-onglet-3:hover{
+    background-image: linear-gradient(to top right, #45AF5D,#52D508);
+    border: 2px solid #52D508;
+    font-size: 20px;
+    color:#fff;
+}
+.validate-btn-onglet3-container{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -12,6 +12,7 @@ import MonCompte from "./components/MonCompte";
 import DashBoard from "./components/DashBoard";
 import DashBoardAdmin from "./components/DashboardAdmin";
 import DetailsCours from "./components/DetailsCours";
+import DashBoardMenu from "./components/DashBoardMenu";
 
 class App extends Component {
   render() {
@@ -29,7 +30,7 @@ class App extends Component {
               component={DetailsCours}
             />
             <Route path="/MonCompte" component={MonCompte} />
-            <Route path="/Dashboard" component={DashBoardAdmin} />
+            <Route path="/Dashboard" component={DashBoardMenu} />
             <Route path="/Error404" component={Error404} />
             <Redirect to="/Error404" />
           </Switch>
