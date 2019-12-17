@@ -1,7 +1,7 @@
 import { getFirestore } from "redux-firestore";
 
 export const getAllCours = () => {
-  return (dispatch, getState, { getFirebase, getfirestore }) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
     firestore
       .collection("COURS")
@@ -13,12 +13,13 @@ export const getAllCours = () => {
 };
 
 export const createCours = cours => {
-  return (dispatch, getState, { getFirebase, getfirestore }) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
-
     firestore
       .collection("COURS")
-      .add({})
+      .add({
+        {...cours}
+      })
       .then(() => {
         dispatch({ type: "CREATE_COURS", cours });
       })
