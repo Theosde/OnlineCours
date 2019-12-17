@@ -108,4 +108,10 @@ hr {
   .navbar ul li a {
     font-size: 12px;
   }
+  .deco-btn{
+    margin-left:15px;
+  }
+  .navbar ul li{
+    font-size: 11px;
+  }
 }

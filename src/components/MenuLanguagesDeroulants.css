@@ -55,3 +55,27 @@
     color: black;
     background-image: linear-gradient(to top right,#fff,#fff,#fff,#42a5f5,#42a5f5);
 }
+
+@media screen and (max-width: 960px) {
+    .menuDeroulantContainer{
+        margin-top:-108px;
+        margin-bottom:120px;
+    }
+    .menuDeroulantContainer2{
+        margin-top:-54px;
+        margin-right:1px;
+        margin-bottom:60px;
+    }
+
+    .langageListItem2{
+        margin-left:0px;
+    }
+
+    .priceFilter{
+        margin-bottom:0px!important;
+    }
+
+    .searchFilter{
+        margin-top:10px;
+    }
+}
