@@ -15,10 +15,12 @@ export const getAllCours = () => {
 export const createCours = cours => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
+    console.log("in cours action", cours);
+
     firestore
       .collection("COURS")
       .add({
-        {...cours}
+        ...cours
       })
       .then(() => {
         dispatch({ type: "CREATE_COURS", cours });

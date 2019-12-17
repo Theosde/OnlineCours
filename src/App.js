@@ -30,7 +30,7 @@ class App extends Component {
               component={DetailsCours}
             />
             <Route path="/MonCompte" component={MonCompte} />
-            <Route path="/Dashboard" component={DashBoardMenu} />
+            <Route path="/Dashboard" component={DashBoardAdmin} />
             <Route path="/Error404" component={Error404} />
             <Redirect to="/Error404" />
           </Switch>
